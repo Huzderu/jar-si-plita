@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="14" fill="#141518"/>
+  <!-- flame -->
+  <path fill="#F2691D" d="M33 8c2 8-5 11-5 18 0 3 2 5 4 5-1-4 3-6 3-10 6 5 10 11 10 18 0 9-6 15-13 15S19 48 19 39c0-7 4-11 7-16 1 4 4 6 6 6-2-7 1-14 1-21z"/>
+  <path fill="#FF8A3D" d="M32 32c1 4 5 6 5 11 0 4-2 7-5 7s-5-3-5-7c0-5 4-7 5-11z"/>
+  <!-- griddle line -->
+  <rect x="14" y="54" width="36" height="3" rx="1.5" fill="#F4EFE6"/>
+</svg>
