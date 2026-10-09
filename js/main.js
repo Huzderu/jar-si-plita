@@ -48,6 +48,17 @@
     var byId = {};
     links.forEach(function (a) { byId[a.getAttribute('href').slice(1)] = a; });
     var current = null;
+    // Centre the active chip by scrolling ONLY the chip row. scrollIntoView() must not be
+    // used here: it also scrolls every ancestor, and on phones it moved the page up by
+    // 50-70 px at each category boundary while the visitor was scrolling down.
+    var centerChip = function (a) {
+      var row = a.parentNode.parentNode; // li -> ul
+      var rowBox = row.getBoundingClientRect();
+      var box = a.getBoundingClientRect();
+      var left = row.scrollLeft + (box.left - rowBox.left) - (rowBox.width - box.width) / 2;
+      if (typeof row.scrollTo === 'function') row.scrollTo({ left: left, behavior: 'smooth' });
+      else row.scrollLeft = left;
+    };
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (en) {
         if (!en.isIntersecting) return;
@@ -55,7 +66,7 @@
         current = byId[en.target.id];
         if (current) {
           current.setAttribute('aria-current', 'true');
-          current.scrollIntoView({ block: 'nearest', inline: 'center', behavior: 'smooth' });
+          centerChip(current);
         }
       });
     }, { rootMargin: '-35% 0px -55% 0px', threshold: 0 });
