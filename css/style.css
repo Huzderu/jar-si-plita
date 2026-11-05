@@ -334,7 +334,9 @@ footer.site h4{font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;col
 footer.site a{color:var(--sand);text-decoration:none;display:block;padding:.18em 0}
 footer.site a:hover{color:var(--ember-hot)}
 footer.site .addr{display:block;padding:.18em 0}
-footer.site a.sal{margin-top:.5rem;display:inline-block;border:1px solid var(--line-strong);border-radius:4px;padding:.3em .7em;font-weight:700;font-size:.82rem;letter-spacing:.06em}
+footer.site a.sal{align-self:flex-start;margin-top:10px;padding:0}
+footer.site a.sal img{display:block;width:250px;height:50px;max-width:100%;object-fit:contain;object-position:left center}
+.page-hero .other-lang{margin-top:24px;color:var(--sand)}
 footer.site .legal{margin-top:34px;padding-top:18px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:6px;font-size:.84rem;color:var(--ash)}
 
 /* ---------- Responsive ---------- */
